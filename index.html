@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Xenomorphs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="StyleEditor.css" rel="stylesheet"> 
+</head>
+
+<body>
+    <div class="background">
+    <div class="text">
+    <h1>XENOMORPHS</h1>
+    <img src="images/XenomorphWarrior.jpg" width="400" height="400" alt="Xenomorph Warrior">
+    </div>
+
+    <audio id="bootAudio" src="media/NostromoBootUp.mp3"></audio>
+    <div class="horizontal-center">
+        <button onclick="document.getElementById('bootAudio').play()">Play Me</button>
+    </div>
+
+
+    <!-- Display the countdown timer in an element -->
+    <div class="text">
+        <p id="demo"></p>
+    </div>
+    <div class="text">
+        <p>Hello!</p> 
+        <p>If you're here, then you are by mistake or you love the world of Alien like I do.</p>
+        <p>Alien is a beloved franchise that has seven movies, a tv show, multiple games, books, figurines, and several comics. Since the first appearance of the Xenomorph in Alien (1979), there has been a mulitude of variations and takes on the Xenomorph's looks and designs.</p>
+        <p>I am a massive fan of this franchise and the Xenomorph design is one of my favorite monster designs ever. There is something so beautiful about the look of the biomechanical the Xenomorph has.</p>
+        <p>Here, I will be going over some of my personal favorites from both the movies and the comics. Also, I will talk about even some named Xenos from the movies and games.</p>
+        <p>Press the names to go to the linked pages.</p>
+        <a href="NamedXenomorphs.html">Named Xenomorphs | <a href="XenomorphDrone.html"> Drone | </a> <a href="XenomorphWarrior.html"> Warrior | </a> <a href="BestXenomorph.html"> Best Xenomorph | <a href="XenomorphDog.html"> Xenomorph Runner</a></a></a>
+    </div>
+    </div>
+
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("April 26, 2027").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="demo"
+    document.getElementById("demo").innerHTML = "Days until Alien Day: " + days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "Happy Alien Day!";
+    }
+    }, 1000);
+</script>
+
+
+    <script>
+    window.addEventListener("DOMContentLoaded", () => {
+        let playCount = 0;
+        const audio = document.getElementById("bootAudio");
+        
+
+        // Try autoplay
+        audio.play().catch(() => {
+            // If blocked, wait for click
+            document.addEventListener("click", () => {
+                audio.play();
+            }, { once: true });
+        });
+
+        // Play twice total
+        audio.addEventListener("ended", () => {
+            playCount++;
+            if (playCount < 1) {
+                audio.currentTime = 0;
+                audio.play();
+            }
+        });
+    });
+    </script>
+</body>
+</html>
