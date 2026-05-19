@@ -27,4 +27,8 @@ a {
     
 }
 
+img {
+    transform: scale(90%);
+}
+
 
