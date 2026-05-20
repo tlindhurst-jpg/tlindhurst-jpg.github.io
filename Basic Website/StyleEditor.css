@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+.background {
+    background-color: black;
+}
+
+.container {
+    position: relative;
+}
+
+.horizontal-center {
+  text-align: center;
+}
+
+.text, a {
+    text-align: center;
+    color: #2a7b2e;
+    font-family: "Orbitron", sans-serif;
+    
+}
+
+img {
+    transform: scale(90%);
+}
+
+
