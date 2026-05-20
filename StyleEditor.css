@@ -4,20 +4,12 @@
     background-color: black;
 }
 
-a {
-    color: black;
-}
-
 .container {
     position: relative;
 }
 
 .horizontal-center {
-  margin: 0;
-  position: relative;
-  top: 50%;
-  -ms-transform: translateX(47%);
-  transform: translateX(47.8%);
+  text-align: center;
 }
 
 .text, a {
